@@ -1,3 +1,8 @@
+:root {
+    --profile-card-height: 256px;
+    --info-margin-top: 16px;
+    --social-bar-height: 56px;
+}
 @font-face {
     font-family: "Vazirmatn";
     src: url("assets/fonts/webfonts/Vazirmatn[wght].woff2") format("woff2 supports variations"),
@@ -5,4 +10,31 @@
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
+}
+.table-border-0 td,
+.table-border-0 th {
+    border: 0 !important;
+}
+.profile-card {
+    height: var(--profile-card-height);
+}
+.info-skill-container {
+    height: calc(100% - (var(--profile-card-height) + var(--info-margin-top) + var(--social-bar-height)));
+    margin-top: var(--info-margin-top);
+}
+.social-bar {
+    display: flex;
+    padding: 12px 16px;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: var(--social-bar-height);
+    background: #23232d;
+}
+.social-bar a {
+    text-decoration: none !important;
+    color: #d4d4d4 !important;
 }
