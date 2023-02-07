@@ -13,11 +13,15 @@ export default defineNuxtConfig({
     modules: [
         async (options, nuxt) => {
             nuxt.hooks.hook('vite:extendConfig', (config) =>
-                config.plugins.push(vuetify({ styles: { configFile: './assets/variables.scss' } }))
+                config.plugins.push(vuetify({
+                    styles: {
+                        configFile: './assets/settings.scss'
+                    }
+                }))
             );
         },
     ],
-    css: ['vuetify/lib/styles/main.sass', '@/assets/main.css'],
+    css: ['@/assets/main.css'],
     build: {
         transpile: ['vuetify'],
     },
