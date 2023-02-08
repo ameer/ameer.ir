@@ -11,6 +11,17 @@
     font-style: normal;
     font-display: swap;
 }
+.ct-high-emphasis {
+    color: #eaeaeb !important;
+}
+
+.ct-medium-emphasis {
+    color: #a7a7ab !important;
+}
+
+.ct-disabled {
+    color: #a0a0a5 !important;
+}
 .table-border-0 td,
 .table-border-0 th {
     border: 0 !important;
@@ -18,22 +29,7 @@
 .profile-card {
     height: var(--profile-card-height);
 }
-.info-skill-container {
-    height: calc(100% - (var(--profile-card-height) + var(--info-margin-top) + var(--social-bar-height)));
-    margin-top: var(--info-margin-top);
-}
-.social-bar {
-    display: flex;
-    padding: 12px 16px;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: var(--social-bar-height);
-    background: #23232d;
-}
+
 .social-bar a {
     text-decoration: none !important;
     color: #d4d4d4 !important;

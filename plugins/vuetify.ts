@@ -7,6 +7,12 @@ const darkTheme = {
     dark: true,
     colors: {
         surface: '#20202a',
+        background: '#131317'
+    },
+    variables: {
+        'high-emphasis-opacity': 0.87,
+        'medium-emphasis-opacity': 0.60,
+        'disabled-opacity': 0.38,
     }
 }
 export default defineNuxtPlugin(nuxtApp => {
