@@ -1,15 +1,8 @@
 <template>
     <v-layout :full-height="true">
         <v-container class="px-8 pt-16 overflow-hidden">
-            <v-img class="top-img" max-height="512" cover
-                srcset="/images/mountains-276995_f3x7ep_ar_16_9,c_fill,g_auto__c_scale,w_596.jpg 596w,
-                                        /images/mountains-276995_f3x7ep_ar_16_9,c_fill,g_auto__c_scale,w_970.jpg 970w,
-                                        /images/mountains-276995_f3x7ep_ar_16_9,c_fill,g_auto__c_scale,w_1254.jpg 1254w,
-                                        /images/mountains-276995_f3x7ep_ar_16_9,c_fill,g_auto__c_scale,w_1440.jpg 1440w"
-                src="/images/mountains-276995_f3x7ep_ar_16_9,c_fill,g_auto__c_scale,w_1440.jpg">
-                <div class="image-gradient-fade-bottom"></div>
-            </v-img>
-            <v-row :align="'center'">
+
+            <v-row :align="'stretch'">
                 <v-col :cols="12">
                     <div class="intro-card">
                         <div class="intro-card__overlay">
@@ -22,14 +15,19 @@
                         </div>
                     </div>
                 </v-col>
+                <counters-col />
+                <v-col class="mt-8" cols="12">
+                    <h2>پروژه‌های من</h2>
+                </v-col>
+                <projects-section />
             </v-row>
         </v-container>
     </v-layout>
 </template>
-<script>
-export default {
-
-}
+<script setup>
+// import { onMounted } from 'vue'
+// const { data } = await useAsyncData('count', () => $fetch('https://cors-anywhere.herokuapp.com/https://bingwallpaper.microsoft.com/api/BWC/getHPImages?screenWidth=1920&screenHeight=1080&env=live', {}))
+// console.log(data)
 </script>
 <style>
 .top-img {
@@ -56,7 +54,7 @@ export default {
     -webkit-box-shadow: 0 3px 8px 0 rgb(15 15 20 / 20%);
     box-shadow: 0 3px 8px 0 rgb(15 15 20 / 20%);
     z-index: 99;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .intro-card::before {
@@ -86,7 +84,7 @@ export default {
 }
 
 .intro-card .profile-photo {
-    width: 35% !important;
+    width: 28% !important;
     height: auto !important;
     position: absolute !important;
     bottom: 0;

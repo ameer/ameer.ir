@@ -22,7 +22,6 @@ const props = defineProps({
     width: 290px;
     min-width: 290px;
     height: calc(100vh - 30px);
-    position: relative;
     z-index: 999;
     -webkit-box-shadow: 0 3px 8px 0 rgb(15 15 20 / 20%);
     box-shadow: 0 3px 8px 0 rgb(15 15 20 / 20%);

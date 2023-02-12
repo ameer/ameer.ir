@@ -7,7 +7,7 @@ const darkTheme = {
     dark: true,
     colors: {
         surface: '#20202a',
-        background: '#131317'
+        background: '#191923'
     },
     variables: {
         'high-emphasis-opacity': 0.87,
