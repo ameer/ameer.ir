@@ -10,7 +10,7 @@
                 <v-spacer></v-spacer>
                 <v-col cols="auto">
                     <span class="text-disabled text-caption">
-                        {{ skill.value }} %
+                        {{ skill.activeYears }}+ سال
                     </span>
                 </v-col>
                 <v-col cols="12" class="mb-4">
@@ -24,13 +24,13 @@
 <script setup>
 import { ref } from 'vue'
 const skills = ref([
-    { title: 'HTML', icon: 'language-html5', value: 100, buffer: 0 },
-    { title: 'CSS', icon: 'language-css3', value: 80, buffer: 0 },
-    { title: 'JavaScript', icon: 'language-javascript', value: 75, buffer: 0 },
-    { title: 'VueJS', icon: 'vuejs', value: 100, buffer: 0 },
-    { title: 'PHP', icon: 'language-php', value: 65, buffer: 0 },
-    { title: 'WordPress', icon: 'wordpress', value: 100, buffer: 0 },
-    { title: 'Laravel', icon: 'laravel', value: 50, buffer: 0 },
+    { title: 'HTML', icon: 'language-html5', value: 100, buffer: 0, activeYears: 10 },
+    { title: 'CSS', icon: 'language-css3', value: 80, buffer: 0, activeYears: 10 },
+    { title: 'JavaScript', icon: 'language-javascript', value: 75, buffer: 0, activeYears: 8 },
+    { title: 'VueJS', icon: 'vuejs', value: 100, buffer: 0, activeYears: 4 },
+    { title: 'PHP', icon: 'language-php', value: 65, buffer: 0, activeYears: 9 },
+    { title: 'WordPress', icon: 'wordpress', value: 100, buffer: 0, activeYears: 10 },
+    { title: 'Laravel', icon: 'laravel', value: 50, buffer: 0, activeYears: 5 },
 ])
 </script>
 <style>

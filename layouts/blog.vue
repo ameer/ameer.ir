@@ -1,9 +1,6 @@
 <template>
     <v-app>
         <v-container class="page-wrapper d-flex pa-0 position-relative">
-            <v-img class="top-img" max-height="512" cover src="/images/computer-2982270_1280.jpg">
-                <div class="image-gradient-fade-bottom"></div>
-            </v-img>
             <side-nav />
             <v-main>
                 <slot />

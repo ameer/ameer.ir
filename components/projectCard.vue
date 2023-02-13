@@ -1,8 +1,12 @@
 <template>
     <v-card height="100%">
-        <v-img :src="project.featuredImage" cover height="200px"></v-img>
+        <div class="scrolling-image-container">
+            <img v-if="project.hasScrollableImage" class="scrolling-image" :src="project.featuredImage" />
+            <v-img v-else :src="project.featuredImage" cover height="200px"></v-img>
+        </div>
+
         <v-card-title class="text-body-1">{{ project.title }}</v-card-title>
-        <v-card-subtitle class="mt-n4">{{ project.desc }}</v-card-subtitle>
+        <v-card-subtitle class="mt-n4">{{ project.description }}</v-card-subtitle>
         <div class="d-flex align-center mt-3">
             <v-divider></v-divider>
             <div class="text-caption text-disabled mx-2 text-no-wrap">ساخته شده با</div>
@@ -21,5 +25,21 @@ const props = defineProps({
 });
 </script>
 <style>
+.scrolling-image-container {
+    height: 200px;
+    overflow: hidden;
+}
 
+img.scrolling-image {
+    width: 100%;
+    transition: transform 1s cubic-bezier(0.4, 0, 1, 1);
+    will-change: transform;
+    transform: translateY(0);
+    cursor: pointer;
+}
+
+img.scrolling-image:hover {
+    transform: translateY(calc(-100% + 200px));
+    transition-duration: 5s;
+}
 </style>

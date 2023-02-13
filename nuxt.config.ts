@@ -10,7 +10,9 @@ export default defineNuxtConfig({
             },
         }
     },
+
     modules: [
+        '@nuxt/content',
         async (options, nuxt) => {
             nuxt.hooks.hook('vite:extendConfig', (config) =>
                 // @ts-ignore
@@ -22,6 +24,9 @@ export default defineNuxtConfig({
             );
         },
     ],
+    content: {
+        // https://content.nuxtjs.org/api/configuration
+    },
     css: ['@/assets/main.css'],
     build: {
         transpile: ['vuetify'],
