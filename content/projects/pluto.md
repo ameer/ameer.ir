@@ -2,15 +2,19 @@
 featuredImage: /projects/pluto-landing.jpg
 hasScrollableImage: true
 title: پلوتو
+slug: projects/pluto-
 description: سامانه هوشمند مدیریت ریسک و دارایی
 technologies: ["vuejs", "nuxt", "vuetify"]
 dateTime: 2022
 featured: 1
+slides: ['login', 'dashboard', 'dashboard-1', 'dashboard-2', 'dashboard-3', 'dashboard-4']
 ---
 
-وب اپ پلوتو یکی از محصولات **شرکت مهندسین مشاور آرنیکا طرح** است که در حوزه مدیریت ریسک و دارایی فعالیت می‌کند.
-این پروژه با استفاده از فریمورک NuxtJS و Vuetify ساخته و توسعه داده شده است.
-برای طراحی انیمیشن‌های صفحه نخست پلوتو از Github Enterprise الگو گرفتم و سعی کردم در عین وفاداری به برندینگ شرکت، حس و حال تازه‌ای به صفحه لندینگ بدم.
+وب اپ پلوتو یکی از محصولات [شرکت مهندسین مشاور آرنیکا طرح](https://arnika.ai) است که در حوزه مدیریت ریسک و دارایی فعالیت
+می‌کند.
 
-_صفحه لاگین_
-![Pluto Login Page](/projects/pluto-login.jpg)
+این پروژه با استفاده از فریمورک [NuxtJS](https://nuxtjs.org) و [Vuetify](https://vuetifyjs.com) ساخته و توسعه داده شده
+است.
+
+برای طراحی انیمیشن‌های صفحه نخست پلوتو از [Github Enterprise](https://github.com/enterprise) الگو گرفتم و سعی کردم در
+عین وفاداری به برندینگ شرکت، حس و حال تازه‌ای به صفحه لندینگ بدم.

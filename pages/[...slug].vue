@@ -1,28 +1,31 @@
 <template>
     <ContentDoc v-slot="{ doc }">
-        {{ doc }}
         <v-layout :full-height="true">
             <v-container class="px-8 pt-16 overflow-hidden">
                 <v-row :align="'stretch'" justify="center">
                     <v-col :cols="12">
-                        <div class="intro-card" :style="`--bg-image: url('${doc.featuredImage}');--bg-position: top`">
-                            <div class="intro-card__overlay">
-                                <div class="intro-card__text">
-                                    <h1 class="text-h3 font-weight-bold ct-high-emphasis">
-                                        {{ doc.title }}
-                                    </h1>
-                                    <h3 class="text-h6 ct-disabled">
-                                        {{ doc.description }}
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
+                        <h1 class="text-h3 font-weight-bold ct-high-emphasis">
+                            {{ doc.title }}
+                        </h1>
+                        <h3 class="text-h6 ct-disabled">
+                            {{ doc.description }}
+                        </h3>
+                    </v-col>
+                    <v-col cols="12">
+                        <carousel :items-to-show="2">
+                            <slide v-for="(slide, i) in doc.slides" :key="`${doc.slug}-slide-${i}`" :data-title="slide">
+                                <v-img :src="`/${doc.slug}${slide}.jpg`">
+                                </v-img>
+                            </slide>
+                            <template #addons>
+                                <navigation />
+                                <pagination />
+                            </template>
+                        </carousel>
                     </v-col>
                     <v-col cols="12" md="9">
-                        <div class="content-container text-body-1 ct-high-emphasis font-weight-light"
-                            style="line-height: 3em;">
-                            <ContentRenderer :value="doc" />
-                        </div>
+                        <ContentRenderer :value="doc"
+                            class="content-container text-body-1 ct-high-emphasis font-weight-light" />
                     </v-col>
                 </v-row>
             </v-container>
@@ -31,7 +34,8 @@
 
 </template>
 <script setup>
-// This will work in both `<script setup>` and `<script>`
+import '/assets/carousel.css'
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 definePageMeta({
     layout: "default",
 });
@@ -41,17 +45,71 @@ definePageMeta({
     object-position: top !important;
 }
 
-.content-container img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    transform: scale(.95);
-    will-change: auto;
-    transition: transform .3s ease-in-out;
-    cursor: zoom-in;
+.content-container p {
+    margin-bottom: 20px;
+    line-height: 1.75rem;
 }
 
-.content-container img:hover {
-    transform: scale(1);
+.content-container a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #469be9;
+    position: relative;
 }
+
+.content-container a::after {
+    position: absolute;
+    bottom: -3px;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    content: "";
+    background-color: currentcolor;
+    transition: transform .25s ease-in-out;
+    transform: scaleX(0);
+}
+
+.content-container a:hover::after {
+    transform: scaleX(1);
+}
+
+li.carousel__slide.carousel__slide--visible {
+    position: relative;
+    overflow: hidden;
+}
+
+li.carousel__slide.carousel__slide--visible::after {
+    position: absolute;
+    content: attr(data-title);
+    width: 100%;
+    height: 64px;
+    background: #191923;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transform: translateY(64px);
+    transition: transform .3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+li.carousel__slide.carousel__slide--visible:hover::after {
+    transform: translateY(0);
+}
+
+li.carousel__slide.carousel__slide--visible img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    pointer-events: none;
+    /* transform: scale(.95);
+    will-change: auto;
+    transition: transform .3s ease-in-out;
+    cursor: zoom-in; */
+}
+
+/* .content-container img:hover {
+    transform: scale(1);
+} */
 </style>

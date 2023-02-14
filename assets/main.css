@@ -100,11 +100,16 @@
         linear,
         left top,
         right top,
-        color-stop(15%, rgba(0, 0, 0, 0.45)),
-        color-stop(50%, rgba(0, 0, 0, 0.6)),
-        to(rgba(0, 0, 0, 0.75))
+        color-stop(15%, rgba(45, 45, 58, 0.9)),
+        color-stop(50%, rgba(45, 45, 58, 0.7)),
+        to(rgba(43, 43, 53, 0.7))
     );
-    background-image: linear-gradient(90deg, rgb(0 0 0 / 35%) 15%, rgba(0 0 0 / 50%) 50%, rgb(0 0 0 / 65%) 100%);
+    background-image: linear-gradient(
+        90deg,
+        rgba(45, 45, 58, 0.9) 15%,
+        rgba(45, 45, 58, 0.7) 50%,
+        rgba(43, 43, 53, 0.7) 100%
+    );
     border-radius: inherit;
 }
 
