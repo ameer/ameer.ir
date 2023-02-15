@@ -12,16 +12,24 @@
                         </h3>
                     </v-col>
                     <v-col cols="12">
-                        <carousel :items-to-show="2">
+                        <carousel :items-to-show="1.25" v-model="sliderModel">
                             <slide v-for="(slide, i) in doc.slides" :key="`${doc.slug}-slide-${i}`" :data-title="slide">
-                                <v-img :src="`/${doc.slug}${slide}.jpg`">
+                                <v-img :src="`/${doc.slug}${slide}.jpg`" cover="">
                                 </v-img>
                             </slide>
                             <template #addons>
-                                <navigation />
                                 <pagination />
                             </template>
                         </carousel>
+                    </v-col>
+                    <v-col cols="12" sm="2" class="pt-0">
+                        <v-btn :size="24" :variant="'text'" icon="mdi-chevron-right" @click="next"
+                            :disabled="sliderModel + 1 === doc.slides.length"></v-btn>
+                        <v-btn :size="24" :variant="'text'" icon="mdi-chevron-left" @click="prev"
+                            :disabled="sliderModel === 0"></v-btn>
+                    </v-col>
+                    <v-col cols="12" sm="10" class="text-end pt-0">
+                        <span>O</span>
                     </v-col>
                     <v-col cols="12" md="9">
                         <ContentRenderer :value="doc"
@@ -34,11 +42,21 @@
 
 </template>
 <script setup>
+import { ref } from 'vue'
+import { useLocale } from 'vuetify';
 import '/assets/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 definePageMeta({
     layout: "default",
 });
+const sliderModel = ref(0)
+const { isRtl } = useLocale()
+const next = () => {
+    sliderModel.value++
+}
+const prev = () => {
+    sliderModel.value--
+}
 </script>
 <style>
 .featured-image img {

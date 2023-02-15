@@ -1,5 +1,5 @@
 <template>
-    <v-card height="100%">
+    <v-card height="100%" :to="project._path">
         <div class="scrolling-image-container">
             <img v-if="project.hasScrollableImage" class="scrolling-image" :src="project.featuredImage" />
             <v-img v-else :src="project.featuredImage" cover height="200px"></v-img>
