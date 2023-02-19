@@ -11,6 +11,36 @@
     font-style: normal;
     font-display: swap;
 }
+a {
+    cursor: pointer;
+}
+.v-application__wrap::after,
+.v-application__wrap::before {
+    bottom: 0;
+    content: "";
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background: #191923;
+    z-index: 9999;
+}
+
+.v-application__wrap {
+    position: relative;
+    padding: 15px;
+    width: auto;
+    height: auto;
+    overflow: visible;
+}
+
+.v-application__wrap::after {
+    bottom: 0;
+}
+
+.v-application__wrap::before {
+    top: 0;
+}
 .ct-high-emphasis {
     color: #eaeaeb !important;
 }
@@ -123,4 +153,10 @@
 
 .intro-card__text {
     width: 60% !important;
+}
+@media (max-width: 1264px) {
+    .intro-card__text {
+        width: 100% !important;
+        text-align: center;
+    }
 }

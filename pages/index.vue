@@ -6,7 +6,7 @@
                     <div class="intro-card"
                         :style="`--bg-image: url('/images/computer-2982270_1280.jpg');--bg-position: center center;`">
                         <div class="intro-card__overlay">
-                            <img src="/ameer-mousavi.png" class="profile-photo" />
+                            <img src="/ameer-mousavi.png" class="d-none d-lg-block profile-photo" />
                             <div class="intro-card__text">
                                 <h1 class="text-h3 font-weight-bold ct-high-emphasis">
                                     دنیای زیبای کارهای من رو ببینید!
@@ -25,9 +25,7 @@
     </v-layout>
 </template>
 <script setup>
-// import { onMounted } from 'vue'
-// const { data } = await useAsyncData('count', () => $fetch('https://cors-anywhere.herokuapp.com/https://bingwallpaper.microsoft.com/api/BWC/getHPImages?screenWidth=1920&screenHeight=1080&env=live', {}))
-// console.log(data)
+
 </script>
 <style>
 

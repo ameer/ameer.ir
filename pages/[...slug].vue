@@ -12,24 +12,26 @@
                         </h3>
                     </v-col>
                     <v-col cols="12">
-                        <carousel :items-to-show="1.25" v-model="sliderModel">
+                        <carousel :items-to-show="1.25" v-model="sliderModel" :dir="'rtl'">
                             <slide v-for="(slide, i) in doc.slides" :key="`${doc.slug}-slide-${i}`" :data-title="slide">
                                 <v-img :src="`/${doc.slug}${slide}.jpg`" cover="">
                                 </v-img>
                             </slide>
-                            <template #addons>
-                                <pagination />
-                            </template>
                         </carousel>
                     </v-col>
                     <v-col cols="12" sm="2" class="pt-0">
-                        <v-btn :size="24" :variant="'text'" icon="mdi-chevron-right" @click="next"
-                            :disabled="sliderModel + 1 === doc.slides.length"></v-btn>
-                        <v-btn :size="24" :variant="'text'" icon="mdi-chevron-left" @click="prev"
+                        <v-btn :size="24" :variant="'text'" icon="mdi-chevron-right" @click="prev"
                             :disabled="sliderModel === 0"></v-btn>
+                        <v-btn :size="24" :variant="'text'" icon="mdi-chevron-left" @click="next"
+                            :disabled="sliderModel + 1 === doc.slides.length"></v-btn>
+
                     </v-col>
                     <v-col cols="12" sm="10" class="text-end pt-0">
-                        <span>O</span>
+                        <span v-for="(slide, i) in doc.slides" :key="`${doc.slug}-slide-nav-${i}`"
+                            class="slide-pagination-bullet" tabindex="0" role="button"
+                            :aria-label="`Go to slide ${i + 1}`" :class="{ 'bg-amber active': sliderModel === i }"
+                            @click="sliderModel = i">
+                        </span>
                     </v-col>
                     <v-col cols="12" md="9">
                         <ContentRenderer :value="doc"
@@ -130,4 +132,20 @@ li.carousel__slide.carousel__slide--visible img {
 /* .content-container img:hover {
     transform: scale(1);
 } */
+span.slide-pagination-bullet {
+    width: 6px;
+    display: inline-block;
+    margin-right: 10px;
+    background-color: #cacace;
+    border-radius: 5px;
+    opacity: .5;
+    height: 4px;
+    -webkit-transition: .4s ease-in-out;
+    transition: .4s ease-in-out;
+}
+
+span.slide-pagination-bullet.active {
+    width: 20px;
+    opacity: 1;
+}
 </style>
