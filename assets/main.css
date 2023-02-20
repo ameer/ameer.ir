@@ -154,9 +154,61 @@ a {
 .intro-card__text {
     width: 60% !important;
 }
+.side-nav__overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: rgba(30, 30, 40, 0.88);
+    z-index: 999;
+    pointer-events: none;
+    opacity: 0;
+    -webkit-transition: 0.55s ease-in-out;
+    transition: 0.55s ease-in-out;
+}
+
+.page-wrapper.side-nav-active .side-nav__overlay,
+.page-wrapper.menu-bar-active .side-nav__overlay {
+    opacity: 1;
+    pointer-events: all;
+}
+.tooltip {
+    position: relative;
+    display: block;
+}
+.tooltip-before::before {
+    pointer-events: none;
+    content: attr(data-title);
+    position: absolute;
+    top: 0;
+    transform: translate(40%, 0) scale(0.7);
+    font-size: 14px;
+    background: rgb(0 0 0 / 30%);
+    display: inline;
+    white-space: nowrap;
+    padding: 0.5rem 1rem;
+    right: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    border-radius: 7px;
+}
+.tooltip-before:hover::before {
+    transform: translate(40%, -110%) scale(1);
+    opacity: 1;
+    visibility: visible;
+}
 @media (max-width: 1264px) {
     .intro-card__text {
         width: 100% !important;
         text-align: center;
+    }
+    .v-application__wrap {
+        padding: 0;
+    }
+    .v-application__wrap::after,
+    .v-application__wrap::before {
+        display: none;
     }
 }

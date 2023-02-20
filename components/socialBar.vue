@@ -1,13 +1,10 @@
 <template>
     <div class="social-bar">
         <template v-for="(link, k) in socialLinks" :key="`social-link-${k}`">
-            <v-tooltip :text="link.title" :location="'top'" :theme="'light'">
-                <template v-slot:activator="{ props }">
-                    <a v-bind="props" :href="link.href" target="_blank" class="mx-2">
-                        <v-icon :icon="`mdi-${link.icon}`"></v-icon>
-                    </a>
-                </template>
-            </v-tooltip>
+            <a :aria-label="link.title" :data-title="link.title" :href="link.href" target="_blank"
+                class="tooltip tooltip-before mx-2">
+                <v-icon :icon="`mdi-${link.icon}`"></v-icon>
+            </a>
         </template>
     </div>
 </template>

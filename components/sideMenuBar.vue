@@ -3,7 +3,7 @@
         <div class="side-menu-bar__inner">
             <div class="position-relative">
                 <div class="side-menu-bar__header">
-                    <a class="side-menu-bar__btn" @click="active = !active">
+                    <a class="side-menu-bar__btn" @click="toggleMenuBar">
                         <span></span>
                     </a>
                 </div>
@@ -13,58 +13,10 @@
                 <div class="scroll-frame">
                     <nav>
                         <ul class="main-menu">
-                            <li id="menu-item-194"
-                                class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-214 current_page_item">
-                                <a href="https://arter.bslthemes.com/">Home</a>
+                            <li v-for="(item, i) in menuItems" :key="`side-menu-item-${i}`" class="menu-item">
+                                <NuxtLink class="ct-high-emphasis" :to="item.href">{{ item.title }}</NuxtLink>
                             </li>
-                            <li id="menu-item-205"
-                                class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-                                <a data-no-swup="">Portfolio</a>
-                                <ul class="sub-menu">
-                                    <li id="menu-item-202"
-                                        class=" menu-item menu-item-type-post_type menu-item-object-page"><a
-                                            href="https://arter.bslthemes.com/portfolio-2-column/">Portfolio (2
-                                            Column)</a></li>
-                                    <li id="menu-item-204"
-                                        class=" menu-item menu-item-type-post_type menu-item-object-page"><a
-                                            href="https://arter.bslthemes.com/portfolio-3-column/">Portfolio (3
-                                            Column)</a></li>
-                                    <li id="menu-item-201"
-                                        class=" menu-item menu-item-type-post_type menu-item-object-page"><a
-                                            href="https://arter.bslthemes.com/portfolio-gallery/">Portfolio
-                                            (Gallery)</a></li>
-                                    <li id="menu-item-203"
-                                        class=" menu-item menu-item-type-post_type menu-item-object-page"><a
-                                            href="https://arter.bslthemes.com/portfolio/">Portfolio (Masonry)</a></li>
-                                </ul>
-                            </li>
-                            <li id="menu-item-199" class=" menu-item menu-item-type-post_type menu-item-object-page"><a
-                                    href="https://arter.bslthemes.com/history/">History</a></li>
-                            <li id="menu-item-206"
-                                class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-                                <a data-no-swup="">Blog</a>
-                                <ul class="sub-menu">
-                                    <li id="menu-item-195"
-                                        class=" menu-item menu-item-type-post_type menu-item-object-page"><a
-                                            href="https://arter.bslthemes.com/blog/">Blog</a></li>
-                                    <li id="menu-item-196"
-                                        class=" menu-item menu-item-type-post_type menu-item-object-page"><a
-                                            href="https://arter.bslthemes.com/blog-3-column/">Blog (3 Column)</a></li>
-                                    <li id="menu-item-197"
-                                        class=" menu-item menu-item-type-post_type menu-item-object-page"><a
-                                            href="https://arter.bslthemes.com/blog-carousel/">Blog (Carousel)</a></li>
-                                </ul>
-                            </li>
-                            <li id="menu-item-198" class=" menu-item menu-item-type-post_type menu-item-object-page"><a
-                                    href="https://arter.bslthemes.com/contact/">Contact</a></li>
-                            <li id="menu-item-243"
-                                class="data-no-swup main-nav-custom-border-top menu-item menu-item-type-custom menu-item-object-custom">
-                                <a target="_blank" href="/onepage/" data-no-swup="">One Page Version</a>
-                            </li>
-                            <li id="menu-item-244"
-                                class="data-no-swup menu-item menu-item-type-custom menu-item-object-custom"><a
-                                    target="_blank" href="/light/" data-no-swup="">Light Version</a></li>
-                        </ul> <!-- menu list end -->
+                        </ul>
                     </nav>
                 </div>
             </div>
@@ -74,13 +26,28 @@
 <script setup>
 import { ref } from 'vue'
 const active = ref(false)
+const menuItems = ref([
+    { title: 'خانه', href: '/' }
+])
+const toggleMenuBar = () => {
+    active.value = !active.value
+    if (active.value === true) { useEvent('sideNavIsOpen', 'menu-bar-active') } else { useEvent('sideNavIsClosed') }
+}
+useListen('closeSideNav', () => {
+    active.value = false
+})
 </script>
 <style>
+:root {
+    --side-menu-bar-header-height: 70px;
+}
+
 .side-menu-bar {
     position: absolute;
     left: 0;
     width: 80px;
     height: calc(100vh - 30px);
+    z-index: 1005;
 }
 
 .side-menu-bar .side-menu-bar__inner {
@@ -105,7 +72,7 @@ const active = ref(false)
 
 .side-menu-bar .side-menu-bar__header {
     width: 100%;
-    height: 70px;
+    height: var(--side-menu-bar-header-height);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -166,6 +133,7 @@ const active = ref(false)
     width: 15px;
     height: 12px;
     padding: 30px;
+    transition: .55s ease-in-out;
 }
 
 .side-menu-bar__btn span,
@@ -181,6 +149,21 @@ const active = ref(false)
     transition: .4s ease-in-out;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+}
+
+.side-menu-bar.active .side-menu-bar__btn span {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+.side-menu-bar.active .side-menu-bar__btn span:before {
+    -webkit-transform: translate(0px, 5px) rotate(-90deg);
+    transform: translate(0px, 5px) rotate(-90deg)
+}
+
+.side-menu-bar.active .side-menu-bar__btn span:after {
+    -webkit-transform: translate(0px, -5px) rotate(-90deg);
+    transform: translate(0px, -5px) rotate(-90deg)
 }
 
 .side-menu-bar__btn span {
@@ -202,12 +185,7 @@ const active = ref(false)
 }
 
 .side-menu-bar nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
     height: 100%;
     position: relative
 }
@@ -215,7 +193,7 @@ const active = ref(false)
 .side-menu-bar nav .main-menu {
     width: 100%;
     padding: 0;
-    margin: 60px 0 0px;
+    margin: calc(var(--side-menu-bar-header-height) + 16px) 0 0px;
     min-width: 230px;
 }
 
@@ -227,13 +205,32 @@ const active = ref(false)
     opacity: 0;
     -webkit-transform: translateX(-60px);
     transform: translateX(-60px);
-    transition: .55s ease-in-out
+    transition: .55s ease-in-out;
+    text-align: center;
 }
 
 .side-menu-bar nav .main-menu .menu-item a {
     padding: 7px 30px;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
+    text-decoration: none;
+    position: relative;
+}
+
+.side-menu-bar nav .main-menu .menu-item a::after {
+    position: absolute;
+    bottom: -3px;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    content: "";
+    background-color: currentcolor;
+    transition: transform .25s ease-in-out;
+    transform: scaleX(0);
+}
+
+.side-menu-bar nav .main-menu .menu-item a:hover::after {
+    transform: scaleX(1);
 }
 
 .side-menu-bar.active nav .main-menu .menu-item {
@@ -290,5 +287,49 @@ const active = ref(false)
 .side-menu-bar nav .main-menu .menu-item:nth-child(10) {
     -webkit-transition-delay: .5s;
     transition-delay: .5s
+}
+
+.side-menu-bar+main.v-main {
+    padding-left: 80px !important;
+}
+
+.side-menu-bar.active+main.v-main {
+    transform: translateX(150px);
+}
+
+@media (max-width: 1264px) {
+    .side-menu-bar {
+        left: -80px;
+    }
+
+    .side-menu-bar .side-menu-bar__header .side-menu-bar__btn {
+        transform: translateX(80px);
+    }
+
+    .side-menu-bar.active .side-menu-bar__header .side-menu-bar__btn {
+        transform: translateX(0);
+    }
+
+    .side-menu-bar.active .side-menu-bar__inner {
+        transform: translateX(230px);
+    }
+
+    .side-menu-bar,
+    .side-menu-bar .side-menu-bar__inner {
+        height: 100vh;
+    }
+
+    .page-wrapper.side-nav-active .side-menu-bar .side-menu-bar__header .side-menu-bar__btn {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .side-menu-bar+main.v-main {
+        padding-left: 0 !important;
+    }
+
+    .side-menu-bar.active+main.v-main {
+        transform: translateX(0);
+    }
 }
 </style>

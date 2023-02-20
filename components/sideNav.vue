@@ -2,7 +2,7 @@
     <aside class="side-nav" :class="{ 'active': active }">
         <div class="side-nav__header">
             <v-btn :ripple="false" :variant="'plain'" class="side-nav__btn" icon="mdi-dots-vertical"
-                @click="active = !active"></v-btn>
+                @click="toggleSideNav"></v-btn>
         </div>
         <profile-card />
         <div class="info-skill-container">
@@ -21,6 +21,10 @@ const active = ref(false)
 const props = defineProps({
     open: Boolean
 })
+const toggleSideNav = () => {
+    active.value = !active.value
+    if (active.value === true) { useEvent('sideNavIsOpen', 'side-nav-active') } else { useEvent('sideNavIsClosed') }
+}
 useListen('closeSideNav', () => {
     active.value = false
 })
@@ -61,7 +65,7 @@ useListen('closeSideNav', () => {
     font-size: 14px !important;
 }
 
-@media (max-width: 1032px) {
+@media (max-width: 1264px) {
     .side-nav {
         position: fixed;
         right: -290px;
@@ -69,28 +73,10 @@ useListen('closeSideNav', () => {
         height: 100vh;
     }
 
-    .side-nav__overlay {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        left: 0;
-        right: 0;
-        background: rgba(30, 30, 40, .88);
-        z-index: 999;
-        pointer-events: none;
-        opacity: 0;
-        -webkit-transition: .55s ease-in-out;
-        transition: .55s ease-in-out;
-    }
-
     .side-nav.active {
         transform: translateX(-290px);
     }
 
-    aside.side-nav.active+.side-nav__overlay {
-        opacity: 1;
-        pointer-events: all;
-    }
 
     main.v-main {
         padding-right: 0 !important;
@@ -109,6 +95,11 @@ useListen('closeSideNav', () => {
 
     .side-nav.active .side-nav__btn {
         transform: translateX(0);
+    }
+
+    .page-wrapper.menu-bar-active .side-nav .side-nav__header .side-nav__btn {
+        opacity: 0;
+        pointer-events: none;
     }
 }
 </style>

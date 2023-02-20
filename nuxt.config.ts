@@ -3,6 +3,9 @@ import vuetify from 'vite-plugin-vuetify'
 
 export default defineNuxtConfig({
     ssr: false,
+    nitro: {
+        preset: 'service-worker'
+    },
     app: {
         head: {
             htmlAttrs: {
