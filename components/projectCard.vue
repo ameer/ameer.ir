@@ -1,10 +1,8 @@
 <template>
     <v-card height="100%" :to="project._path">
-        <div class="scrolling-image-container">
-            <img v-if="project.hasScrollableImage" class="scrolling-image" :src="project.featuredImage" />
-            <v-img v-else :src="project.featuredImage" cover height="200px"></v-img>
-        </div>
 
+        <nuxt-picture legacy-format="jpg" preset="scrollingImage" :src="project.featuredImage" loading="lazy"
+            fit="cover" height="200px" :modifiers="{ position: 'top', }" decoding="async" />
         <v-card-title class="text-body-1">{{ project.title }}</v-card-title>
         <v-card-subtitle class="mt-n4">{{ project.description }}</v-card-subtitle>
         <div class="d-flex align-center mt-3">
@@ -23,6 +21,7 @@
 const props = defineProps({
     project: Object,
 });
+
 </script>
 <style>
 .scrolling-image-container {

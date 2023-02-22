@@ -4,9 +4,7 @@
             <v-app-bar-title class="text-center font-weight-bold">امیر موسوی</v-app-bar-title>
         </v-app-bar>
         <v-container class="page-wrapper d-flex pa-0 position-relative" :class="drawerOpenClass">
-            <v-img class="top-img" max-height="512" cover src="/images/computer-2982270_1280.jpg">
-                <div class="image-gradient-fade-bottom"></div>
-            </v-img>
+            <images-top-faded :src="'/images/computer-2982270_1280.jpg'" :height="512" />
             <side-nav />
             <div class="side-nav__overlay" @click="closeSideNav"></div>
             <side-menu-bar />
@@ -21,7 +19,6 @@ import { ref } from 'vue'
 import { useDisplay } from 'vuetify/lib/framework.mjs';
 const drawerOpenClass = ref('')
 const { mdAndDown } = useDisplay()
-
 useListen('sideNavIsOpen', (cssClass) => {
     drawerOpenClass.value = cssClass
 })
@@ -35,7 +32,6 @@ const closeSideNav = () => {
     useEvent('closeSideNav')
     drawerOpenClass.value = ''
 }
-
 </script>
 <style>
 .page-wrapper {

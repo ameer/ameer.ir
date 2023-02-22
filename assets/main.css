@@ -70,6 +70,8 @@ a {
     left: 0 !important;
     right: 0 !important;
     height: 360px !important;
+    background-size: cover;
+    background-position: center;
 }
 .image-gradient-fade-bottom {
     position: relative;
