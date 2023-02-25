@@ -4,7 +4,7 @@
             <v-app-bar-title class="text-center font-weight-bold">امیر موسوی</v-app-bar-title>
         </v-app-bar>
         <v-container class="page-wrapper d-flex pa-0 position-relative" :class="drawerOpenClass">
-            <images-top-faded :src="'/images/computer-2982270_1280.jpg'" :height="512" />
+            <images-top-faded :src="'/img/computer-2982270_1280.jpg'" :height="512" />
             <side-nav />
             <div class="side-nav__overlay" @click="closeSideNav"></div>
             <side-menu-bar />

@@ -15,7 +15,7 @@ const props = defineProps({
     height: { type: [Number, String], default: 256 },
     src: {
         type: String,
-        default: '/images/computer-2982270_1280.jpg'
+        default: '/img/computer-2982270_1280.jpg'
     }
 })
 const $img = useImage()
@@ -29,6 +29,4 @@ const backgroundStyles = computed(() => {
     }
 })
 </script>
-<style>
-
-</style>
+<style></style>

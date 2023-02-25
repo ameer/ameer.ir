@@ -1,5 +1,5 @@
 ---
-featuredImage: /projects/arnika-landing.jpg
+featuredImage: /arnika-landing.jpg
 hasScrollableImage: true
 title: آرنیکا
 description: وبسایت شرکت مهندسین مشاور آرنیکا طرح

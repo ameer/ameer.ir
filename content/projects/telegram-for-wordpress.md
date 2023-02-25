@@ -1,5 +1,5 @@
 ---
-featuredImage: /projects/twp-landing.jpg
+featuredImage: /twp-landing.jpg
 hasScrollableImage: false
 title: تلگرام برای وردپرس
 description: پلاگین اتصال وردپرس به ربات تلگرام

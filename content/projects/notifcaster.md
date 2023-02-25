@@ -1,5 +1,5 @@
 ---
-featuredImage: /projects/notifcaster-landing.jpg
+featuredImage: /notifcaster-landing.jpg
 hasScrollableImage: false
 title: Notifcaster
 description: سرویسی برای اتصال ربات تلگرام به وبسایت

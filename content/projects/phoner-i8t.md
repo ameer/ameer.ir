@@ -1,5 +1,5 @@
 ---
-featuredImage: /projects/phoner-i8t-landing.jpg
+featuredImage: /phoner-i8t-landing.jpg
 hasScrollableImage: true
 title: فروش اقساطی فونر
 description: لندینگ فروش اقساطی فروشگاه فونر

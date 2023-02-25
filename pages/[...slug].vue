@@ -28,9 +28,8 @@
                     </v-col>
                     <v-col cols="12" sm="10" class="text-end pt-0">
                         <span v-for="(slide, i) in doc.slides" :key="`${doc.slug}-slide-nav-${i}`"
-                            class="slide-pagination-bullet" tabindex="0" role="button"
-                            :aria-label="`Go to slide ${i + 1}`" :class="{ 'bg-amber active': sliderModel === i }"
-                            @click="sliderModel = i">
+                            class="slide-pagination-bullet" tabindex="0" role="button" :aria-label="`Go to slide ${i + 1}`"
+                            :class="{ 'bg-amber active': sliderModel === i }" @click="sliderModel = i">
                         </span>
                     </v-col>
                     <v-col cols="12" md="9">
@@ -41,7 +40,6 @@
             </v-container>
         </v-layout>
     </ContentDoc>
-
 </template>
 <script setup>
 import { ref } from 'vue'

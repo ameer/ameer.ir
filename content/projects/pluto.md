@@ -1,5 +1,5 @@
 ---
-featuredImage: /projects/pluto-landing.jpg
+featuredImage: /pluto-landing.jpg
 hasScrollableImage: true
 title: پلوتو
 slug: projects/pluto-
@@ -7,7 +7,15 @@ description: سامانه هوشمند مدیریت ریسک و دارایی
 technologies: ["vuejs", "nuxt", "vuetify"]
 dateTime: 2022
 featured: 1
-slides: ['login', 'dashboard', 'dashboard-1', 'dashboard-2', 'dashboard-3', 'dashboard-4']
+slides:
+  [
+    "login",
+    "dashboard",
+    "dashboard-1",
+    "dashboard-2",
+    "dashboard-3",
+    "dashboard-4",
+  ]
 ---
 
 وب اپ پلوتو یکی از محصولات [شرکت مهندسین مشاور آرنیکا طرح](https://arnika.ai) است که در حوزه مدیریت ریسک و دارایی فعالیت

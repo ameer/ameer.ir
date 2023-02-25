@@ -4,11 +4,12 @@
     </v-col>
 </template>
 <script setup>
-const projects = await queryContent('projects')
-    .only(['_path', 'title', 'description', 'technologies', 'featuredImage', 'hasScrollableImage', 'dateTime', 'featured', 'slug'])
-    .sort({ dateTime: -1, featured: 1 })
-    .find()
+const { path } = useRoute()
+const { data: projects } = await useAsyncData(`content-${path}`, () => {
+    return queryContent('projects')
+        .only(['_path', 'title', 'description', 'technologies', 'featuredImage', 'hasScrollableImage', 'dateTime', 'featured', 'slug'])
+        .sort({ dateTime: -1, featured: 1 })
+        .find()
+})
 </script>
-<style>
-
-</style>
+<style></style>

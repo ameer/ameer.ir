@@ -2,10 +2,8 @@
 import vuetify from 'vite-plugin-vuetify'
 
 export default defineNuxtConfig({
-    ssr: false,
-    nitro: {
-        preset: 'service-worker'
-    },
+    ssr: true,
+
     app: {
         head: {
             htmlAttrs: {
@@ -29,13 +27,13 @@ export default defineNuxtConfig({
         },
     ],
     image: {
-        // The screen sizes predefined by `@nuxt/image`:
+
         screens: {
             xs: 320,
             sm: 600,
             md: 960,
-            lg: 1265,
-            xl: 1905,
+            lg: 1264,
+            xl: 1904,
         },
         presets: {
             introCard: {
@@ -56,11 +54,16 @@ export default defineNuxtConfig({
     },
     content: {
         // https://content.nuxtjs.org/api/configuration
+        experimental: {
+            clientDb: true
+        }
+
     },
     css: ['@/assets/main.css'],
     build: {
         transpile: ['vuetify'],
     },
+    // experimental: { payloadExtraction: false },
     vite: {
         define: {
             'process.env.DEBUG': false,

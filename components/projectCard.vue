@@ -1,8 +1,13 @@
 <template>
     <v-card height="100%" :to="project._path">
 
-        <nuxt-picture legacy-format="jpg" preset="scrollingImage" :src="project.featuredImage" loading="lazy"
-            fit="cover" height="200px" :modifiers="{ position: 'top', }" decoding="async" />
+        <v-img :lazy-src="$img(`img/projects${project.featuredImage}`, { width: 10, quality: 70 })"
+            :src="$img(`img/projects${project.featuredImage}`, { height, quality: 70 })" height="200"
+            :srcset="_srcset.srcset" cover="">
+            <template #sources>
+                <source :srcset="_srcset.srcset">
+            </template>
+        </v-img>
         <v-card-title class="text-body-1">{{ project.title }}</v-card-title>
         <v-card-subtitle class="mt-n4">{{ project.description }}</v-card-subtitle>
         <div class="d-flex align-center mt-3">
@@ -20,8 +25,22 @@
 <script setup>
 const props = defineProps({
     project: Object,
+    height: { type: [Number, String], default: 200 }
 });
-
+const $img = useImage()
+const _srcset = computed(() => {
+    return $img.getSizes(`img/projects${props.project.featuredImage}`, {
+        sizes: 'xs:100vw sm:50vw md:33vw xl:20vw',
+        modifiers: {
+            position: 'top', strategy: 'attention',
+            gravity: 'center',
+            fit: 'cover',
+            format: 'webp',
+            quality: 70,
+            height: props.height
+        }
+    })
+})
 </script>
 <style>
 .scrolling-image-container {

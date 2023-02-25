@@ -1,5 +1,5 @@
 ---
-featuredImage: /projects/aminib-landing.jpg
+featuredImage: /aminib-landing.jpg
 hasScrollableImage: true
 title: شرکت تأمین سرمایه امین
 description: وبسایت رسمی شرکت تأمین سرمایه امین
