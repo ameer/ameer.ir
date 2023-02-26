@@ -1,5 +1,5 @@
 ---
-featuredImage: /ims-landing.jpg
+featuredImage: ims
 hasScrollableImage: true
 title: انجمن ریاضی ایران
 description: وبلاگ و وبسایت انجمن ریاضی ایران

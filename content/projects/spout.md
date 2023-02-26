@@ -1,5 +1,5 @@
 ---
-featuredImage: /spout-landing.jpg
+featuredImage: spout
 hasScrollableImage: true
 title: اسپات
 description: سامانه بازارگردانی هوشمند الگوریتمی

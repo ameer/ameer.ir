@@ -2,7 +2,8 @@ $font-family: "Vazirmatn" !default;
 
 @use "vuetify/settings" with (
     $container-max-widths: (
-        "xl": 1440px // "xxl": map.get($grid-breakpoints, "xxl") * 0.9375,,,,,,,,,,,,,,,,
+        "xl": 1440px,
+        "xxl": 1440px,
     ),
     $body-font-family: $font-family,
     $typography: (

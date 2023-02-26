@@ -72,9 +72,11 @@ a {
     height: 360px !important;
     background-size: cover;
     background-position: center;
+    overflow: hidden;
 }
 .image-gradient-fade-bottom {
-    position: relative;
+    position: absolute;
+    top: 0;
     height: 100%;
     width: 100%;
     background-image: -webkit-gradient(

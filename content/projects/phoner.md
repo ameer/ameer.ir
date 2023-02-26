@@ -1,5 +1,5 @@
 ---
-featuredImage: /phoner-landing.jpg
+featuredImage: phoner
 hasScrollableImage: true
 title: فروشگاه فونر
 description: وبسایت فروشگاهی فونر

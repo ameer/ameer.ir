@@ -1,5 +1,5 @@
 ---
-featuredImage: /khu-bio-landing.jpg
+featuredImage: khu-bio
 hasScrollableImage: false
 title: کنگره بین‌المللی زیست‌شناسی ایران
 description: وبسایت رسمی کنگره ملی و بین‌المللی دانشگاه خوارزمی

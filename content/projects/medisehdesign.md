@@ -1,5 +1,5 @@
 ---
-featuredImage: /mediseh-landing.jpg
+featuredImage: mediseh
 hasScrollableImage: false
 title: گروه طراحی مدیسه
 description: وبسایت گروه طراحی داخلی مدیسه

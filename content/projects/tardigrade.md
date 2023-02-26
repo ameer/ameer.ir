@@ -1,5 +1,5 @@
 ---
-featuredImage: /tardi-landing.jpg
+featuredImage: tardi
 hasScrollableImage: true
 title: Tardigrade
 description: کیف پول سازمانی بر پایه بلاک‌چین

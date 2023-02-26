@@ -1,5 +1,5 @@
 ---
-featuredImage: /avaerc-landing.jpg
+featuredImage: avaerc
 hasScrollableImage: false
 title: مرکز آموزش و توان‌بخشی آوا
 description: وبسایت مرکز آموزش و توان‌بخشی کودکان آوا

@@ -1,29 +1,16 @@
 <template>
-    <v-img class="top-img" max-height="512" cover :lazy-src="$img(src, { width: 10, quality: 70 })"
-        :src="$img(src, { height, quality: 70 })" :srcset="_srcset.srcset" :height="height" :sizes="_srcset.sizes">
+    <div class="top-img">
+        <nuxt-img class="" :modifiers="{ position: 'top' }" :src="`/img/computer-2982270_1280.jpg`" fit="fill" quality="70"
+            loading="lazy" width="100vw">
+        </nuxt-img>
         <div class="image-gradient-fade-bottom"></div>
-    </v-img>
+    </div>
 </template>
 <script setup>
-const props = defineProps({
-    height: { type: [Number, String], default: 500 },
-    src: {
-        type: String,
-        default: '/img/header-bg.jpg'
-    }
-})
-const $img = useImage()
-const _srcset = computed(() => {
-    return $img.getSizes(props.src, {
-        sizes: 'xs:100vw sm:100vw md:100vw lg:100vw xl:100vw',
-        modifiers: {
-            format: 'webp',
-            quality: 70,
-            height: props.height
-        }
-    })
-})
 </script>
 <style>
+.top-img img {
+    width: 100%;
 
+}
 </style>

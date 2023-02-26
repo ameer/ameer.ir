@@ -14,12 +14,13 @@
                     <v-col cols="12">
                         <carousel :items-to-show="1.25" v-model="sliderModel" :dir="'rtl'">
                             <slide v-for="(slide, i) in doc.slides" :key="`${doc.slug}-slide-${i}`" :data-title="slide">
-                                <v-img :src="`/${doc.slug}${slide}.jpg`" cover="">
-                                </v-img>
+                                <nuxt-picture legacy-format="jpg" fit="cover" :modifiers="{ position: 'top' }" :height="350"
+                                    sizes="sm:100vw lg:800px" :src="`/img/${doc.slug}${slide}.jpg`">
+                                </nuxt-picture>
                             </slide>
                         </carousel>
                     </v-col>
-                    <v-col cols="12" sm="2" class="pt-0">
+                    <v-col v-if="doc.hasSlides" cols="12" sm="2" class="pt-0">
                         <v-btn :size="24" :variant="'text'" icon="mdi-chevron-right" @click="prev"
                             :disabled="sliderModel === 0"></v-btn>
                         <v-btn :size="24" :variant="'text'" icon="mdi-chevron-left" @click="next"

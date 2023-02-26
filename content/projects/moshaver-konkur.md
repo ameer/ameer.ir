@@ -1,5 +1,5 @@
 ---
-featuredImage: /moshaver-konkur-landing.jpg
+featuredImage: moshaver-konkur
 hasScrollableImage: false
 title: مشاور کنکور
 description: وبسایت مشاوره تخصصی کنکور و انتخاب رشته

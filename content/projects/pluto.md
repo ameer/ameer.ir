@@ -1,5 +1,5 @@
 ---
-featuredImage: /pluto-landing.jpg
+featuredImage: pluto
 hasScrollableImage: true
 title: پلوتو
 slug: projects/pluto-
@@ -7,6 +7,7 @@ description: سامانه هوشمند مدیریت ریسک و دارایی
 technologies: ["vuejs", "nuxt", "vuetify"]
 dateTime: 2022
 featured: 1
+hasSlides: true
 slides:
   [
     "login",
