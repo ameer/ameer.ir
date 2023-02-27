@@ -3,8 +3,8 @@
 
         <div class="scrolling-image-container" style="width:100%;">
             <nuxt-picture legacy-format="jpg" preset="scrollingImage"
-                :src="`img/projects/${project.featuredImage}-landing.jpg`" loading="lazy" fit="cover"
-                :modifiers="{ position: 'top' }" :height="200" sizes="sm:50vw md:320px lg:240px xxl:320px" />
+                :src="`img/projects/${project.featuredImage}-landing.jpg`" :loading="project.featured > 0 ? 'auto' : 'lazy'"
+                fit="cover" :modifiers="{ position: 'top' }" :height="200" sizes="sm:50vw md:320px lg:240px xxl:320px" />
         </div>
         <v-card-title class="text-body-1">{{ project.title }}</v-card-title>
         <v-card-subtitle class="mt-n4">{{ project.description }}</v-card-subtitle>
