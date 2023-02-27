@@ -1,7 +1,7 @@
 <template>
     <div class="intro-card">
         <div class="intro-card__image-container">
-            <nuxt-img :src="src" :modifiers="{ position: 'center' }" :quality="50" :height="250" fit="cover"
+            <nuxt-img :src="src" :modifiers="{ position: 'center' }" :quality="50" :height="250" fit="fill"
                 width="1080"></nuxt-img>
         </div>
         <div class="intro-card__overlay">

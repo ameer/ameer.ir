@@ -14,7 +14,7 @@
                     <v-col cols="12">
                         <carousel :items-to-show="1.25" v-model="sliderModel" :dir="'rtl'">
                             <slide v-for="(slide, i) in doc.slides" :key="`${doc.slug}-slide-${i}`" :data-title="slide">
-                                <nuxt-picture legacy-format="jpg" fit="cover" :modifiers="{ position: 'top' }" :height="350"
+                                <nuxt-picture legacy-format="jpg" fit="fill" :modifiers="{ position: 'top' }" :height="350"
                                     sizes="sm:100vw lg:800px" :src="`/img/${doc.slug}${slide}.jpg`">
                                 </nuxt-picture>
                             </slide>
