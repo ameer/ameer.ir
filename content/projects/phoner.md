@@ -1,5 +1,5 @@
 ---
-featuredImage: phoner
+featuredImage: phoner-logo.png
 hasScrollableImage: true
 title: فروشگاه فونر
 description: وبسایت فروشگاهی فونر

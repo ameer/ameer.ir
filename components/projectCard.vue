@@ -1,15 +1,9 @@
 <template>
     <v-card height="100%" :to="project._path">
-
-        <!-- <div class="scrolling-image-container" style="width:100%;">
-            <nuxt-picture legacy-format="jpg" preset="scrollingImage"
-                :src="`img/projects/${project.featuredImage}-landing.jpg`" :loading="project.featured > 0 ? 'auto' : 'lazy'"
-                fit="fill" :modifiers="{ position: 'top' }" :height="200" sizes="sm:100vw md:320px lg:240px xxl:320px" />
-        </div> -->
-        <v-img :lazy-src="$img(`img/projects/${props.project.featuredImage}-landing.jpg`, { width: 10, quality: 70 })"
-            :src="$img(`img/projects/${props.project.featuredImage}-landing.jpg`, { height, quality: 70 })"
-            :srcset="_srcset.srcset" :height="height" :sizes="_srcset.sizes" cover="">
-        </v-img>
+        <div class="scrolling-image-container">
+            <v-img :src="`img/projects/${project.featuredImage}`" height="85">
+            </v-img>
+        </div>
         <v-card-title class="text-body-1">{{ project.title }}</v-card-title>
         <v-card-subtitle class="mt-n4">{{ project.description }}</v-card-subtitle>
         <div class="d-flex align-center mt-3">
@@ -26,31 +20,19 @@
 </template>
 <script setup>
 const props = defineProps({
-    project: Object,
-    height: { type: [Number, String], default: 200 }
+    project: Object
 });
-const $img = useImage()
-const _srcset = computed(() => {
-    return $img.getSizes(`img/projects/${props.project.featuredImage}-landing.jpg`, {
-        sizes: 'xs:100vw sm:50vw md:33vw xl:20vw',
-        modifiers: {
-            position: 'top', strategy: 'attention',
-            gravity: 'center',
-            fit: 'fill',
-            format: 'webp',
-            quality: 70,
-            height: props.height
-        }
-    })
-})
 </script>
 <style>
 .scrolling-image-container {
     height: 200px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    background-color: #23232d;
 }
 
-img.scrolling-image {
+/* img.scrolling-image {
     width: 100%;
     transition: transform 1s cubic-bezier(0.4, 0, 1, 1);
     will-change: transform;
@@ -61,5 +43,5 @@ img.scrolling-image {
 img.scrolling-image:hover {
     transform: translateY(calc(-100% + 200px));
     transition-duration: 5s;
-}
+} */
 </style>

@@ -216,3 +216,8 @@ a {
         display: none;
     }
 }
+@media screen and (max-width: 600px) {
+    .intro-card__overlay {
+        padding: 32px;
+    }
+}

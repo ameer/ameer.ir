@@ -1,5 +1,5 @@
 ---
-featuredImage: aminib
+featuredImage: aminib-logo.png
 hasScrollableImage: true
 title: شرکت تأمین سرمایه امین
 description: وبسایت رسمی شرکت تأمین سرمایه امین

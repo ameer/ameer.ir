@@ -1,9 +1,6 @@
 <template>
-    <div class="intro-card">
-        <div class="intro-card__image-container">
-            <nuxt-img :src="src" :modifiers="{ position: 'center' }" :quality="50" :height="250" fit="fill"
-                width="1080"></nuxt-img>
-        </div>
+    <div class="intro-card" :style="`--bg-image: ${backgroundImgURL};--bg-position: center center;`">
+
         <div class="intro-card__overlay">
             <nuxt-img :src="`/ameer-mousavi.png`" :quality="50" class="d-none d-lg-block profile-photo"></nuxt-img>
             <div class="intro-card__text">
@@ -22,15 +19,9 @@ const props = defineProps({
         default: '/img/computer-2982270_1280.jpg'
     }
 })
-const $img = useImage()
+const backgroundImgURL = computed(() => {
 
-const backgroundStyles = computed(() => {
-    const imgUrl = $img(props.src, {}, {
-        preset: 'introCard',
-    })
-    return {
-        backgroundImage: `url('${imgUrl}')`
-    }
+    return `url('${props.src}')`
 })
 </script>
 <style>

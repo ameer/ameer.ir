@@ -1,5 +1,5 @@
 ---
-featuredImage: pluto
+featuredImage: pluto-logo.svg
 hasScrollableImage: true
 title: پلوتو
 slug: projects/pluto-

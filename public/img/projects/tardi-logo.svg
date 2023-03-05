@@ -1,0 +1,16 @@
+<svg width="542" height="540" xmlns="http://www.w3.org/2000/svg" data-name="Tardigrade-Logo">
+ <g>
+  <title>Tardigrade-Logo</title>
+  <g stroke="null" id="svg_19">
+   <circle stroke="null" id="svg_11" fill="#f2d7a3" r="158.93755" cy="270.00051" cx="270.99522" class="cls-2"/>
+   <circle stroke="null" id="svg_12" fill="#e2a725" r="101.35107" cy="270.00051" cx="270.99522" class="cls-3"/>
+   <circle stroke="null" id="svg_13" fill="none" r="161.62753" cy="271.05933" cx="270.99522" class="cls-4"/>
+   <path stroke="#f5f0e4" id="svg_14" stroke-width="24.01px" stroke-miterlimit="10" stroke-linecap="round" fill="none" d="m335.65005,419.22743l0,43.66919a5.06517,5.06517 0 0 0 1.49761,3.60571l59.54196,59.5515a5.10332,5.10332 0 0 0 7.22097,0l124.19679,-124.19679a5.14148,5.14148 0 0 0 1.49761,-3.61525l0,-127.18247c0,-142.82631 -115.78346,-258.60977 -258.60977,-258.60977s-258.60023,115.78346 -258.60023,258.60977l0,127.18247a5.10332,5.10332 0 0 0 1.49761,3.61525l124.19679,124.19679a5.10332,5.10332 0 0 0 7.22097,0l59.54196,-59.5515a5.10332,5.10332 0 0 0 1.49761,-3.60571l0,-43.66919" class="cls-5"/>
+   <line y1="12.44956" stroke="#f5f0e4" id="svg_15" stroke-width="24.01px" stroke-miterlimit="10" stroke-linecap="round" fill="none" y2="44.77697" x2="270.99522" x1="270.99522" class="cls-5"/>
+   <line x1="12.39499" stroke="#f5f0e4" id="svg_16" stroke-width="24.01px" stroke-miterlimit="10" stroke-linecap="round" fill="none" y2="271.05933" x2="44.7224" y1="271.05933" class="cls-5"/>
+   <line stroke="#f5f0e4" id="svg_17" stroke-width="24.01px" stroke-miterlimit="10" stroke-linecap="round" fill="none" y2="271.05933" x2="497.27758" y1="271.05933" x1="529.60499" class="cls-5"/>
+   <circle stroke="#f5f0e4" id="svg_18" stroke-width="24.01px" stroke-miterlimit="10" stroke-linecap="round" fill="none" r="161.62753" cy="271.05933" cx="270.99522" class="cls-5"/>
+  </g>
+ </g>
+
+</svg>

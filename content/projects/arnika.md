@@ -1,5 +1,5 @@
 ---
-featuredImage: arnika
+featuredImage: arnika-logo.svg
 hasScrollableImage: true
 title: آرنیکا
 description: وبسایت شرکت مهندسین مشاور آرنیکا طرح

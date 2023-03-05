@@ -1,16 +1,14 @@
 <template>
-    <div class="top-img">
-        <nuxt-img class="" :modifiers="{ position: 'center' }" :src="`/img/computer-2982270_1280.jpg`" fit="fill"
-            quality="20" width="1440px" height="360px">
-        </nuxt-img>
+    <v-img class="top-img" max-height="512" cover :src="src">
         <div class="image-gradient-fade-bottom"></div>
-    </div>
+    </v-img>
 </template>
 <script setup>
+const props = defineProps({
+    height: { type: [Number, String], default: 500 },
+    src: {
+        type: String,
+        default: '/img/computer-cropped.jpg'
+    }
+})
 </script>
-<style>
-.top-img img {
-    width: 100%;
-
-}
-</style>

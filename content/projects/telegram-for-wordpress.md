@@ -1,5 +1,5 @@
 ---
-featuredImage: twp
+featuredImage: twp-logo.png
 hasScrollableImage: false
 title: تلگرام برای وردپرس
 description: پلاگین اتصال وردپرس به ربات تلگرام

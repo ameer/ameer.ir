@@ -2,7 +2,7 @@
 import vuetify from 'vite-plugin-vuetify'
 
 export default defineNuxtConfig({
-    ssr: true,
+    ssr: false,
 
     app: {
         head: {

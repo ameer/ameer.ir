@@ -1,5 +1,5 @@
 ---
-featuredImage: notifcaster
+featuredImage: notifcaster-logo.png
 hasScrollableImage: false
 title: Notifcaster
 description: سرویسی برای اتصال ربات تلگرام به وبسایت
