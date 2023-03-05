@@ -6,9 +6,9 @@
                 :src="`img/projects/${project.featuredImage}-landing.jpg`" :loading="project.featured > 0 ? 'auto' : 'lazy'"
                 fit="fill" :modifiers="{ position: 'top' }" :height="200" sizes="sm:100vw md:320px lg:240px xxl:320px" />
         </div> -->
-        <v-img :lazy-src="$img(project.featuredImage, { width: 10, quality: 70 })"
-            :src="$img(project.featuredImage, { height, quality: 70 })" :srcset="_srcset.srcset" :height="height"
-            :sizes="_srcset.sizes" cover="">
+        <v-img :lazy-src="$img(`img/projects/${props.project.featuredImage}-landing.jpg`, { width: 10, quality: 70 })"
+            :src="$img(`img/projects/${props.project.featuredImage}-landing.jpg`, { height, quality: 70 })"
+            :srcset="_srcset.srcset" :height="height" :sizes="_srcset.sizes" cover="">
         </v-img>
         <v-card-title class="text-body-1">{{ project.title }}</v-card-title>
         <v-card-subtitle class="mt-n4">{{ project.description }}</v-card-subtitle>
