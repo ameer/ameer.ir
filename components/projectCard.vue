@@ -36,7 +36,7 @@ const _srcset = computed(() => {
         modifiers: {
             position: 'top', strategy: 'attention',
             gravity: 'center',
-            fit: 'cover',
+            fit: 'fill',
             format: 'webp',
             quality: 70,
             height: props.height
