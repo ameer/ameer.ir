@@ -1,5 +1,5 @@
 ---
-featuredImage: soltani-1
+featuredImage: soltani-1-logo.png
 hasScrollableImage: true
 title: دبیرستان سلطانی یک
 description: وبسایت رسمی دبیرستان استعدادهای درخشان شهید سلطانی یک کرج

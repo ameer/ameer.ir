@@ -221,3 +221,6 @@ a {
         padding: 32px;
     }
 }
+.d-contents {
+    display: contents;
+}

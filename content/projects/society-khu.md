@@ -1,5 +1,5 @@
 ---
-featuredImage: society-khu
+featuredImage: society-khu-logo.svg
 hasScrollableImage: false
 title: همایش جامعه و تعلیم و تربیت
 description: وبسایت نخستین همایش جامعه و تعلیم و تربیت دانشگاه خوارزمی

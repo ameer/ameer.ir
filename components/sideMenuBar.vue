@@ -27,7 +27,8 @@
 import { ref } from 'vue'
 const active = ref(false)
 const menuItems = ref([
-    { title: 'خانه', href: '/' }
+    { title: 'خانه', href: '/' },
+    { title: 'پروژه‌ها', href: '/projects'}
 ])
 const toggleMenuBar = () => {
     active.value = !active.value

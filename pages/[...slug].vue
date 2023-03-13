@@ -127,10 +127,13 @@ li.carousel__slide.carousel__slide--visible img {
     transition: transform .3s ease-in-out;
     cursor: zoom-in; */
 }
-
-/* .content-container img:hover {
+.content-container img {
+    width: 100%;
+    height: auto;
+}
+.content-container img:hover {
     transform: scale(1);
-} */
+}
 span.slide-pagination-bullet {
     width: 6px;
     display: inline-block;
