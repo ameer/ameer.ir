@@ -11,6 +11,16 @@
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+    font-family: "VazirmatnFD";
+    src: url("assets/fonts/webfonts/Vazirmatn-UI-FD-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+html[dir="rtl"] .fa-num {
+    font-family: "VazirmatnFD" !important;
+}
 a {
     cursor: pointer;
 }
@@ -152,9 +162,14 @@ a {
     height: auto !important;
     position: absolute !important;
     bottom: 0;
+}
+.v-locale--is-rtl .intro-card .profile-photo {
     left: 0;
 }
-
+.v-locale--is-ltr .intro-card .profile-photo {
+    right: 0;
+    left: unset;
+}
 .intro-card__text {
     width: 60% !important;
 }

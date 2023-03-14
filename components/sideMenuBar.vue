@@ -28,7 +28,7 @@ import { ref } from 'vue'
 const active = ref(false)
 const menuItems = ref([
     { title: 'خانه', href: '/' },
-    { title: 'پروژه‌ها', href: '/projects'}
+    { title: 'پروژه‌ها', href: '/projects' }
 ])
 const toggleMenuBar = () => {
     active.value = !active.value
@@ -45,10 +45,15 @@ useListen('closeSideNav', () => {
 
 .side-menu-bar {
     position: absolute;
-    left: 0;
+    right: 0;
     width: 80px;
     height: calc(100vh - 30px);
     z-index: 1005;
+}
+
+.v-locale--is-rtl .side-menu-bar {
+    left: 0 !important;
+    right: auto !important;
 }
 
 .side-menu-bar .side-menu-bar__inner {
@@ -85,11 +90,16 @@ useListen('closeSideNav', () => {
     align-items: center;
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     z-index: 9;
     -webkit-box-shadow: 0 1px 4px 0 rgba(15, 15, 20, .1);
     box-shadow: 0 1px 4px 0 rgba(15, 15, 20, .1);
     background: linear-gradient(159deg, rgba(37, 37, 50, .98) 0, rgba(35, 35, 45, .98) 100%);
+}
+
+.v-locale--is-rtl .side-menu-bar .side-menu-bar__header {
+    left: 0;
+    right: unset;
 }
 
 .side-menu-bar .side-menu-bar__inner .current-page {
@@ -290,7 +300,11 @@ useListen('closeSideNav', () => {
     transition-delay: .5s
 }
 
-.side-menu-bar+main.v-main {
+.v-locale--is-ltr .side-menu-bar+main.v-main {
+    padding-right: 80px !important;
+}
+
+.v-locale--is-rtl .side-menu-bar+main.v-main {
     padding-left: 80px !important;
 }
 

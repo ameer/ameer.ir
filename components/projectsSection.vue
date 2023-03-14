@@ -1,6 +1,6 @@
 <template>
     <v-col class="mt-8 d-flex align-center" cols="12">
-        <h2>پروژه‌های من</h2>
+        <h2>{{ $t('My Projects') }}</h2>
         <template v-if="enableFilter">
             <v-spacer></v-spacer>
             <span class="ct-medium-emphasis">فیلتر:</span>

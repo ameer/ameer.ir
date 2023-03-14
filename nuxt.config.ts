@@ -4,20 +4,22 @@ import vuetify from 'vite-plugin-vuetify'
 export default defineNuxtConfig({
     ssr: false,
 
-    app: {
-        head: {
-            htmlAttrs: {
-                lang: 'fa'
-            },
-        }
-    },
+    // app: {
+    //     head: {
+    //         htmlAttrs: {
+    //             lang: 'fa'
+    //         },
+    //     }
+    // },
 
     modules: [
+        // @ts-ignore
+        '@nuxtjs/i18n',
         '@nuxt/content',
         '@nuxt/image-edge',
         async (options, nuxt) => {
             nuxt.hooks.hook('vite:extendConfig', (config) =>
-                // @ts-ignore
+
                 config.plugins.push(vuetify({
                     styles: {
                         configFile: './assets/settings.scss'
@@ -50,6 +52,31 @@ export default defineNuxtConfig({
                     quality: 100
                 }
             }
+        }
+    },
+    i18n: {
+        locales: [
+            {
+                code: 'fa',
+                iso: 'fa-IR',
+                dir: 'rtl',
+                name: 'Persian',
+                file: 'fa-IR.json'
+            },
+            {
+                code: 'en',
+                iso: 'en-US',
+                dir: 'ltr',
+                name: 'English',
+                file: 'en-US.json'
+            }
+        ],
+        seo: true,
+        detectBrowserLanguage: false,
+        defaultLocale: 'en',
+        langDir: 'lang',
+        vueI18n: {
+            fallbackLocale: 'en',
         }
     },
     content: {

@@ -5,7 +5,7 @@
             <nuxt-img :src="`/ameer-mousavi.png`" :quality="50" class="d-none d-lg-block profile-photo"></nuxt-img>
             <div class="intro-card__text">
                 <h1 class="text-h3 font-weight-bold ct-high-emphasis">
-                    دنیای زیبای کارهای من رو ببینید!
+                    {{ $t('See the beautiful world of my work!') }}
                 </h1>
             </div>
         </div>

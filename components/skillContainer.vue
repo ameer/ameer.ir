@@ -9,7 +9,7 @@
                 </v-col>
                 <v-spacer></v-spacer>
                 <v-col cols="auto">
-                    <span class="text-disabled text-caption">
+                    <span class="text-disabled text-caption fa-num">
                         {{ skill.activeYears }}+ سال
                     </span>
                 </v-col>
