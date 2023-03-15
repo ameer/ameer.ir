@@ -8,7 +8,7 @@
         <v-card-subtitle class="mt-n4">{{ project.description }}</v-card-subtitle>
         <div class="d-flex align-center mt-3">
             <v-divider></v-divider>
-            <div class="text-caption text-disabled mx-2 text-no-wrap">ساخته شده با</div>
+            <div class="text-caption text-disabled mx-2 text-no-wrap">{{ $t('Built with') }}</div>
             <v-divider></v-divider>
         </div>
         <v-card-text class="text-center">

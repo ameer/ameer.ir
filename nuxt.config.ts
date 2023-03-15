@@ -4,13 +4,11 @@ import vuetify from 'vite-plugin-vuetify'
 export default defineNuxtConfig({
     ssr: false,
 
-    // app: {
-    //     head: {
-    //         htmlAttrs: {
-    //             lang: 'fa'
-    //         },
-    //     }
-    // },
+    app: {
+        head: {
+            title: 'Ameer Mousavi',
+        }
+    },
 
     modules: [
         // @ts-ignore

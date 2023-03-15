@@ -6,10 +6,13 @@
 </template>
 <script setup>
 import { ref } from 'vue';
+const { t } = useI18n({
+    useScope: 'local'
+})
 const counters = ref([
-    { title: 'سال تجربه', number: 10 },
-    { title: 'پروژه تکمیل شده', number: 28 },
-    { title: 'مورد رضایت مشتری', number: 60 },
+    { title: t('Years’ experience'), number: 10 },
+    { title: t('Completed Project'), number: 31 },
+    { title: t('Customer Satisfaction'), number: 60 },
 ])
 </script>
 <style></style>

@@ -19,6 +19,9 @@
 </template>
 <script setup>
 import { ref, computed } from 'vue'
+const { locale } = useI18n({
+    useScope: 'local'
+})
 const props = defineProps({
     enableFilter: { type: Boolean, default: false },
 })
@@ -26,8 +29,9 @@ const filters = ref(['All', 'VueJS', 'WordPress'])
 const currentFilter = ref('All')
 
 const { path } = useRoute()
-const { data } = await useAsyncData(`content-${path}`, () => {
-    return queryContent('projects')
+console.log(locale.value, path)
+const { data } = await useAsyncData(`content-${locale.value}-${path}`, () => {
+    return queryContent(`${locale.value}/projects`)
         .only(['_path', 'title', 'description', 'technologies', 'featuredImage', 'hasScrollableImage', 'dateTime', 'featured', 'slug'])
         .sort({ dateTime: -1, featured: 1 })
         .find()

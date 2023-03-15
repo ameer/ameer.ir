@@ -12,6 +12,11 @@
     </v-layout>
 </template>
 <script setup>
-
+useHead({
+    title: 'خانه',
+    meta: [
+        { name: 'description', content: '' }
+    ]
+})
 </script>
 <style></style>

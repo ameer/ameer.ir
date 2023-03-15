@@ -10,7 +10,7 @@
                 <v-spacer></v-spacer>
                 <v-col cols="auto">
                     <span class="text-disabled text-caption fa-num">
-                        {{ skill.activeYears }}+ سال
+                        {{ skill.activeYears }}+ {{ $t('years') }}
                     </span>
                 </v-col>
                 <v-col cols="12" class="mb-4">

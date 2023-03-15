@@ -53,36 +53,61 @@ useListen('closeSideNav', () => {
     -ms-flex-align: center;
     align-items: center;
     position: absolute;
-    left: 0;
     top: 0;
     z-index: 1006;
     display: none;
 }
 
-html[lang='rtl'] .side-nav__header {
+.v-locale--is-ltr .side-nav__header {
+    left: 0;
+}
+
+.v-locale--is-rtl .side-nav__header {
     right: 0;
 }
 
 .side-nav__btn {
-    margin-right: auto;
     pointer-events: all;
     font-size: 14px !important;
 }
 
+.v-locale--is-ltr .side-nav__btn {
+    margin-left: auto;
+}
+
+.v-locale--is-rtl .side-nav__btn {
+    margin-right: auto;
+}
+
 @media (max-width: 1264px) {
-    .side-nav {
+
+    .v-locale--is-ltr .side-nav {
+        position: fixed;
+        left: -290px;
+        width: 290px;
+        height: 100vh;
+    }
+
+    .v-locale--is-rtl .side-nav {
         position: fixed;
         right: -290px;
         width: 290px;
         height: 100vh;
     }
 
-    .side-nav.active {
+    .v-locale--is-ltr .side-nav.active {
+        transform: translateX(290px);
+    }
+
+    .v-locale--is-rtl .side-nav.active {
         transform: translateX(-290px);
     }
 
+    .v-locale--is-ltr main.v-main {
+        padding-left: 0 !important;
+    }
 
-    main.v-main {
+    .v-locale--is-rtl main.v-main {
         padding-right: 0 !important;
     }
 
@@ -90,7 +115,14 @@ html[lang='rtl'] .side-nav__header {
         display: flex;
     }
 
-    .side-nav__btn {
+    .v-locale--is-ltr .side-nav__btn {
+        -webkit-transform: translateX(56px);
+        transform: translateX(56px);
+        -webkit-transition: .4s ease-in-out;
+        transition: .4s ease-in-out !important;
+    }
+
+    .v-locale--is-rtl .side-nav__btn {
         -webkit-transform: translateX(-56px);
         transform: translateX(-56px);
         -webkit-transition: .4s ease-in-out;
@@ -105,5 +137,4 @@ html[lang='rtl'] .side-nav__header {
         opacity: 0;
         pointer-events: none;
     }
-}
-</style>
+}</style>
