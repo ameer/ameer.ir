@@ -12,7 +12,7 @@
                         </h3>
                     </v-col>
                     <v-col cols="12">
-                        <carousel :items-to-show="1.25" v-model="sliderModel" :dir="'rtl'">
+                        <carousel :items-to-show="1.25" v-model="sliderModel" :dir="i18nHead.htmlAttrs.dir">
                             <slide v-for="(slide, i) in doc.slides" :key="`${doc.slug}-slide-${i}`" :data-title="slide">
                                 <nuxt-picture legacy-format="jpg" fit="fill" :modifiers="{ position: 'top' }" :height="350"
                                     sizes="sm:100vw lg:800px" :src="`/img/${doc.slug}${slide}.jpg`">
@@ -20,10 +20,11 @@
                             </slide>
                         </carousel>
                     </v-col>
-                    <v-col v-if="doc.hasSlides" cols="12" sm="2" class="pt-0">
-                        <v-btn :size="24" :variant="'text'" icon="mdi-chevron-right" @click="prev"
+                    <v-col v-if="doc.hasSlides" cols="12" sm="2" class="custom-carousel-arrows pt-0"
+                        :dir="i18nHead.htmlAttrs.dir">
+                        <v-btn :size="24" :variant="'text'" icon="mdi-chevron-right" class="prev" @click="prev"
                             :disabled="sliderModel === 0"></v-btn>
-                        <v-btn :size="24" :variant="'text'" icon="mdi-chevron-left" @click="next"
+                        <v-btn :size="24" :variant="'text'" icon="mdi-chevron-left" class="next" @click="next"
                             :disabled="sliderModel + 1 === doc.slides.length"></v-btn>
 
                     </v-col>
@@ -47,6 +48,10 @@ import { ref } from 'vue'
 import { useLocale } from 'vuetify';
 import '/assets/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+const i18nHead = useLocaleHead({
+    addSeoAttributes: true,
+    addDirAttribute: true
+})
 definePageMeta({
     layout: "default",
 });
@@ -127,13 +132,20 @@ li.carousel__slide.carousel__slide--visible img {
     transition: transform .3s ease-in-out;
     cursor: zoom-in; */
 }
+
+.custom-carousel-arrows[dir=ltr] button {
+    transform: rotate(-180deg);
+}
+
 .content-container img {
     width: 100%;
     height: auto;
 }
+
 .content-container img:hover {
     transform: scale(1);
 }
+
 span.slide-pagination-bullet {
     width: 6px;
     display: inline-block;

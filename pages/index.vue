@@ -12,11 +12,9 @@
     </v-layout>
 </template>
 <script setup>
-useHead({
-    title: 'خانه',
-    meta: [
-        { name: 'description', content: '' }
-    ]
+const { t } = useI18n({
+    useScope: 'local'
 })
+
 </script>
 <style></style>

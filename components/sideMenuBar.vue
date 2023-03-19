@@ -8,7 +8,7 @@
                     </a>
                 </div>
                 <div class="current-page">
-                    خانه
+                    {{ $t('') }}
                 </div>
                 <div class="scroll-frame">
                     <nav>
@@ -25,10 +25,13 @@
 </template>
 <script setup>
 import { ref } from 'vue'
+const { t } = useI18n({
+    useScope: 'local'
+})
 const active = ref(false)
 const menuItems = ref([
-    { title: 'خانه', href: '/' },
-    { title: 'پروژه‌ها', href: '/projects' }
+    { title: t('Home'), href: '/' },
+    { title: t('Projects'), href: '/projects' }
 ])
 const toggleMenuBar = () => {
     active.value = !active.value
@@ -223,6 +226,7 @@ useListen('closeSideNav', () => {
     transform: translateX(-60px);
     transition: .55s ease-in-out;
     text-align: center;
+    margin-bottom: 1.5rem;
 }
 
 .side-menu-bar nav .main-menu .menu-item a {

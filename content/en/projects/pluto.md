@@ -19,15 +19,12 @@ slides:
   ]
 ---
 
-وب اپ پلوتو یکی از محصولات <a href="https://arnika.ai" target="_blank">شرکت مهندسین مشاور آرنیکا طرح</a> است که در حوزه مدیریت ریسک و دارایی فعالیت
-می‌کند.
+Pluto Web App is one of the products of <a href="https://arnika.ai" target="_blank">Arnika Design Consulting Engineers</a> which operates in the field of risk and asset management.
 
-این پروژه با استفاده از فریمورک <a href="https://nuxtjs.org" target="_blank">NuxtJS</a> و <a href="https://vuetifyjs.com" target="_blank">Vuetify</a> ساخته و توسعه داده شده
-است.
+This project is based on <a href="https://nuxtjs.org" target="_blank">NuxtJS</a> and <a href="https://vuetifyjs.com" target="_blank">Vuetify< /a>.
 
-برای طراحی انیمیشن‌های صفحه نخست پلوتو از [Github Enterprise](https://github.com/enterprise) الگو گرفتم و سعی کردم در
-عین وفاداری به برندینگ شرکت، حس و حال تازه‌ای به صفحه لندینگ بدم.
+To design Pluto's home page animations, I took the example of [Github Enterprise](https://github.com/enterprise) and tried to give a new feeling to the landing page while being loyal to the company's branding.
 
-نسخه‌ی زنده‌ی <a href="https://aides.stage.arnika.ai" target="_blank">پلوتو</a> رو میتونید اینجا ببینید.
+You can see the live version of <a href="https://aides.stage.arnika.ai" target="_blank">Pluto</a> here.
 
 ![Pluto Landing](/img/projects/pluto-full.jpg)

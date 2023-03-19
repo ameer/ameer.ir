@@ -19,13 +19,11 @@ slides:
   ]
 ---
 
-وب اپ اسپات یکی از محصولات <a href="https://arnika.ai" target="_blank">شرکت مهندسین مشاور آرنیکا طرح</a> است که در حوزه بازارگردانی الگوریتمی فعالیت
-می‌کند.
+Spout web app is one of the products of <a href="https://arnika.ai" target="_blank">Arnika Design Consulting Engineers</a> which operates in the field of algorithmic marketing.
 
-این پروژه با استفاده از فریمورک <a href="https://nuxtjs.org" target="_blank">NuxtJS</a> و <a href="https://vuetifyjs.com" target="_blank">Vuetify</a> ساخته و توسعه داده شده
-است.
-برای نمایش نمودارها در اسپات از <a href="https://highcharts.com" target="_blank">Highcharts</a> استفاده شده که به لحاظ انعطاف و توسعه‌پذیری یکی از بهترین کتابخانه‌های رسم نمودار به حساب میاد.
+This project is based on <a href="https://nuxtjs.org" target="_blank">NuxtJS</a> and <a href="https://vuetifyjs.com" target="_blank">Vuetify</a> framework.
+<a href="https://highcharts.com" target="_blank">Highcharts</a> is used to display charts in the Spout, which is considered one of the best chart drawing libraries in terms of flexibility and expandability.
 
-داشبورد اسپات به دلایل امنیتی قابل دسترسی از بیرون نیست اما صفحه اول <a href="https://spout.arnika.ai" target="_blank">اسپات</a> رو میتونید زنده اینجا ببینید:
+The Spout dashboard is not accessible from the outside due to security reasons, but you can see the front page of <a href="https://spout.arnika.ai" target="_blank">Spout</a> live here:
 
 ![Pluto Landing](/img/projects/spout-full.jpg)

@@ -19,13 +19,14 @@ slides:
   ]
 ---
 
-یکی از پروژه‌های جذابی که توی شرکت <a href="https://arnika.ai" target="_blank">آرنیکا</a> روی اون کار کردم، پروژه تردیگرید بود.
-تردیگرید که به تازگی اسمش به Keywa تغییر داده شده، یک کیف پول سازمانی بر پایه کریپتو هست که قراره به سازمان‌ها کمک کنه تا بتونن تراکنش‌ها و مسائل مالی خودشون رو با کریپتو مدیریت کنن.
+One of the interesting projects that I worked on in <a href="https://arnika.ai" target="_blank">Arnika Design Consulting Engineers</a> company was the Tardigrade project.
 
-صفحه لندینگ و پنل تردیگرید رو با استفاده از <a href="https://nuxtjs.org" target="_blank">NuxtJS</a> و <a href="https://vuetifyjs.com" target="_blank">Vuetify</a> توسعه دادم.
+Tardigrade, recently renamed Keywa, is a crypto-based enterprise wallet that aims to help organizations manage their transactions and finances with crypto.
 
-یکی از چالش‌های مهمی که موقع توسعه پنل تردیگرید باهاش درگیر بودم، مسئله رسم گراف امضای سازمانی بود که با استفاده از کتابخانه <a href="https://visjs.github.io/vis-network/" target="_blank">VisJS</a> تونستم حلش کنم. توی اسلاید آخر میتونید یه نمونه ازش رو ببینید.
+I developed the landing page and dashboard using <a href="https://nuxtjs.org" target="_blank">NuxtJS</a> and <a href="https://vuetifyjs.com" target="_blank">Vuetify</a>.
 
-متاسفانه نسخه زنده از لندینگ تردیگرید در دسترس نیست ولی میتونید تصویر کاملش رو اینجا ببینید:
+One of the important challenges that I was involved with during the development of the Tardigrade panel was the issue of drawing an organizational signature graph, which I was able to solve using the <a href="https://visjs.github.io/vis-network/" target="_blank">VisJS</a> library. You can see an example of it in the last slide.
+
+Unfortunately, the live version of Tardigrade is not available, but you can see its full image here:
 
 ![Tardi Landing](/img/projects/tardi-full.jpg)

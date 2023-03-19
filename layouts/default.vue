@@ -1,4 +1,7 @@
 <template>
+    <!-- <Head>
+        <Title>Salam</Title>
+    </Head> -->
     <v-app>
         <v-app-bar :elevation="2" class="d-block d-lg-none">
             <v-app-bar-title class="text-center font-weight-bold">{{ $t('Ameer Mousavi') }}</v-app-bar-title>
